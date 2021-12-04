@@ -10,13 +10,4 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Resolvers\Employee" />
-    <Folder Include="Resolvers\Hall" />
-    <Folder Include="Resolvers\Movie" />
-    <Folder Include="Resolvers\Play" />
-    <Folder Include="Resolvers\Ticket" />
-    <Folder Include="Resolvers\User" />
-  </ItemGroup>
-
 </Project>

@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Branch;
 using dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Branches;
 using dotnet_graphql_hotchocolate_abdot_middleware_api.Services;
 using dotnet_graphql_hotchocolate_abdot_middleware_api.Services.Classes;

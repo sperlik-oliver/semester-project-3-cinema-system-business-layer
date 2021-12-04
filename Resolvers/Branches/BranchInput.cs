@@ -1,11 +1,10 @@
 using System.Collections.Generic;
-using dotnet_graphql_hotchocolate_abdot_middleware_api.Models;
 
-namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Branch {
+namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Branches {
     public record BranchInput(
         int Id,
         string City,
-        IList<Hall> Halls,
-        IList<Employee> Employees
+        IList<Models.Hall> Halls,
+        IList<Models.Employee> Employees
     );
 }
