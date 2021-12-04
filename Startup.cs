@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Queries;
 using dotnet_graphql_hotchocolate_abdot_middleware_api.Services;
 using dotnet_graphql_hotchocolate_abdot_middleware_api.Services.Classes;
+using dotnet_graphql_hotchocolate_abdot_middleware_api.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
