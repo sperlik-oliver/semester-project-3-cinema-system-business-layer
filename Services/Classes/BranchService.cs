@@ -19,7 +19,7 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Services.Classes {
             }
 
             var result = await responseMessage.Content.ReadAsStringAsync();
-
+            Console.WriteLine((List<Branch>) CustomJsonSerialization.Deserialize(result));
             List<Branch> branches = (List<Branch>) CustomJsonSerialization.Deserialize(result);
 
             return branches;
@@ -52,6 +52,7 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Services.Classes {
             }
 
             var result = await responseMessage.Content.ReadAsStringAsync();
+            
             Branch tmp = (Branch) CustomJsonSerialization.Deserialize(result);
             return tmp;
         }
