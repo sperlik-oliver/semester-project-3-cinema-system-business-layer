@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using dotnet_graphql_hotchocolate_abdot_middleware_api.Services.Classes;
@@ -15,6 +16,7 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Branches {
         }
 
         public async Task<List<Models.Branch>> GetBranches() {
+            Console.WriteLine("Query");
             return await branchService.GetBranchesAsync();
         }
 
