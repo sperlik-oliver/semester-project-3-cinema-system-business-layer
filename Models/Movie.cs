@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-
-namespace ABDOTClient.Model
+﻿namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Models
 {
     public class Movie
     {

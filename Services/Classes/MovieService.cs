@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ABDOTClient.Model;
+using dotnet_graphql_hotchocolate_abdot_middleware_api.Models;
 using dotnet_graphql_hotchocolate_abdot_middleware_api.Services.Interfaces;
 
 namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Services.Classes {

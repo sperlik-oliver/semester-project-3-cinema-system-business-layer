@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using ABDOTClient.Model;
 
 namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Models {
     public class Branch {
