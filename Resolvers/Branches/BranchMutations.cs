@@ -15,8 +15,7 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Branches {
         }
 
         public async Task<Branch> CreateBranch(BranchInput input) {
-            //TODO oliver do we create branch like that with halls already in or we make method for adding halls to it>
-            //TODO also with employees
+            
             var branch = new Branch {
                 City = input.City,
                 Street = input.Street,

@@ -24,6 +24,7 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api {
                 .AddTypeExtension<BranchQueries>()
                 //Mutation
                 .AddMutationType(m => m.Name("Mutation"))
+                .AddTypeExtension<BranchMutations>()
                 ;
             services.AddScoped<IBranchService, BranchService>();
             services.AddScoped<IEmployeeService, EmployeeService>();
