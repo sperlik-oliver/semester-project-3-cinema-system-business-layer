@@ -6,42 +6,45 @@ using System.Threading.Tasks;
 using dotnet_graphql_hotchocolate_abdot_middleware_api.Models;
 using dotnet_graphql_hotchocolate_abdot_middleware_api.Services.Interfaces;
 using dotnet_graphql_hotchocolate_abdot_middleware_api.Utilities;
+using Newtonsoft.Json;
 
 namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Services.Classes {
     public class BranchService : IBranchService {
         private readonly string uri = "https://abdot-api.herokuapp.com/api/branch";
 
         public async Task<List<Branch>> GetBranchesAsync() {
-            using HttpClient httpClient = new HttpClient();
-            HttpResponseMessage responseMessage = await httpClient.GetAsync($"{uri}/es");
+            using var httpClient = new HttpClient();
+            var responseMessage = await httpClient.GetAsync($"{uri}/es");
             if (!responseMessage.IsSuccessStatusCode) {
                 throw new Exception($"Error: {responseMessage.StatusCode}, {responseMessage.ReasonPhrase}");
             }
 
             var result = await responseMessage.Content.ReadAsStringAsync();
-            Console.WriteLine((List<Branch>) CustomJsonSerialization.Deserialize(result));
-            List<Branch> branches = (List<Branch>) CustomJsonSerialization.Deserialize(result);
+
+
+            var branches = JsonConvert.DeserializeObject<List<Branch>>(result);
+
 
             return branches;
         }
 
         public async Task<Branch> GetBranchAsync(int id) {
-            using HttpClient httpClient = new HttpClient();
+            using var httpClient = new HttpClient();
             var responseMessage = await httpClient.GetAsync($"{uri}/{id}");
             if (!responseMessage.IsSuccessStatusCode) {
                 throw new Exception($"Error: {responseMessage.StatusCode}, {responseMessage.ReasonPhrase}");
             }
 
             var result = await responseMessage.Content.ReadAsStringAsync();
-            Branch branch = (Branch) CustomJsonSerialization.Deserialize(result);
+            var branch = JsonConvert.DeserializeObject<Branch>(result);
             return branch;
         }
 
         public async Task<Branch> CreateBranchAsync(Branch branch) {
-            using HttpClient httpClient = new HttpClient();
+            using var httpClient = new HttpClient();
 
             var content = new StringContent(
-                CustomJsonSerialization.Serialise(branch),
+                CustomJsonConvert.SerializeObject(branch),
                 Encoding.UTF8,
                 "application/json"
             );
@@ -52,13 +55,14 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Services.Classes {
             }
 
             var result = await responseMessage.Content.ReadAsStringAsync();
-            
-            Branch tmp = (Branch) CustomJsonSerialization.Deserialize(result);
-            return tmp;
+
+            var createdBranch = JsonConvert.DeserializeObject<Branch>(result);
+            return createdBranch;
+
         }
 
         public async Task<bool> DeleteBranchAsync(int id) {
-            using HttpClient httpClient = new HttpClient();
+            using var httpClient = new HttpClient();
 
             var responseMessage = await httpClient.DeleteAsync($"{uri}/delete/{id}");
 
@@ -70,10 +74,10 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Services.Classes {
         }
 
         public async Task<Branch> EditBranchAsync(Branch branch) {
-            using HttpClient httpClient = new HttpClient();
+            using var httpClient = new HttpClient();
 
             var content = new StringContent(
-                CustomJsonSerialization.Serialise(branch),
+                CustomJsonConvert.SerializeObject(branch),
                 Encoding.UTF8,
                 "application/json"
             );
@@ -84,8 +88,8 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Services.Classes {
             }
 
             var result = await responseMessage.Content.ReadAsStringAsync();
-            Branch tmp = (Branch) CustomJsonSerialization.Deserialize(result);
-            return tmp;
+            var editedBranch = JsonConvert.DeserializeObject<Branch>(result);
+            return editedBranch;
         }
     }
 }
