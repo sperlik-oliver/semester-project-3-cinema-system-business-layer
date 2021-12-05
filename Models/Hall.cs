@@ -53,11 +53,11 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Models
         
         private void CreateSeats(int rows, int columns)
         {
-            for (int i = 1; i <= rows; i++)
+            for (var i = 1; i <= rows; i++)
             {
-                for (int z = 1; z <= columns; z++)
+                for (var z = 1; z <= columns; z++)
                 {
-                    Tuple<int, int> tuple = new Tuple<int, int>(i, z);
+                    var tuple = new Tuple<int, int>(i, z);
                     Seats.Add(tuple);
                 }
             } 
@@ -66,8 +66,8 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Models
 
         public void PrintArray()
         {
-            int totalRows = Seats.Max().Item1;
-            int totalColumns = Seats.Max().Item2;
+            var totalRows = Seats.Max().Item1;
+            var totalColumns = Seats.Max().Item2;
             foreach (var seat in Seats)
             {
                 
