@@ -1,10 +1,5 @@
-﻿namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Models
-{
-    public class Movie
-    {
-    
-      
-        public long Id { get; set; }
+﻿namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Movie {
+    public class AddMovie {
         public string Title { get; set; }
         public string Description { get; set; }
         public string Genre { get; set; }
@@ -14,6 +9,5 @@
         public int Year { get; set; }
         public int LengthInMinutes { get; set; }
         public string PosterSrc { get; set; }
-        
     }
 }

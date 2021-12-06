@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Branches;
+using dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Employee;
+using dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Hall;
+using dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Movie;
 using dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Play;
 using dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Ticket;
 using dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.User;
@@ -11,7 +14,6 @@ using dotnet_graphql_hotchocolate_abdot_middleware_api.Services.Classes;
 using dotnet_graphql_hotchocolate_abdot_middleware_api.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -28,6 +30,9 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api {
                 .AddTypeExtension<PlayQueries>()
                 .AddTypeExtension<TicketQueries>()
                 .AddTypeExtension<UserQueries>()
+                .AddTypeExtension<EmployeeQueries>()
+                .AddTypeExtension<HallQueries>()
+                .AddTypeExtension<MovieQueries>()
 
                 //Mutation
                 .AddMutationType(m => m.Name("Mutation"))
@@ -35,10 +40,12 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api {
                 .AddTypeExtension<PlayMutations>()
                 .AddTypeExtension<TicketMutations>()
                 .AddTypeExtension<UserMutations>()
-
+                .AddTypeExtension<EmployeeMutations>()
+                .AddTypeExtension<HallMutations>()
+                .AddTypeExtension<MovieMutations>()
                 ;
-                //Mutation
-                services.AddScoped<IBranchService, BranchService>();
+            //Mutation
+            services.AddScoped<IBranchService, BranchService>();
             services.AddScoped<IEmployeeService, EmployeeService>();
             services.AddScoped<IHallService, HallService>();
             services.AddScoped<IMovieService, MovieService>();

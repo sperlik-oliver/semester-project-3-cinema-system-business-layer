@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 using dotnet_graphql_hotchocolate_abdot_middleware_api.Services;
 using dotnet_graphql_hotchocolate_abdot_middleware_api.Services.Classes;
+using dotnet_graphql_hotchocolate_abdot_middleware_api.Services.Interfaces;
 using HotChocolate.Types;
 
 namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.User
