@@ -6,7 +6,7 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Models
 {
     public class Play
     {
-        public int Id { get; private set; }
+        public int Id { get; set; }
         public DateTime Date { get; set; }
         public int TimeInMinutes { get; set; }
         public double Price { get; set; }

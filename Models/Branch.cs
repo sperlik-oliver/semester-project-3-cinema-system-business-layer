@@ -3,9 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Models {
     public class Branch {
-        public int Id { get; set; }
-        public string Street { get; set; }
-        public string Postcode { get; set; }
+        public long Id { get; set; }
         public string City { get; set; }
         public string Street { get; set; }
         public string Postcode { get; set; }

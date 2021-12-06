@@ -1,26 +1,25 @@
 using System;
 using System.Threading.Tasks;
-using dotnet_graphql_hotchocolate_abdot_middleware_api.Models;
 using dotnet_graphql_hotchocolate_abdot_middleware_api.Services.Classes;
 using dotnet_graphql_hotchocolate_abdot_middleware_api.Services.Interfaces;
 using HotChocolate.Types;
-using Microsoft.AspNetCore.Server.IIS.Core;
 
-namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Branches {
+namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Ticket
+{
     [ExtendObjectType(Name = "Mutation")]
-    public class BranchMutations {
-        private IBranchService branchService;
+    public class TicketMutations
+    {
+        private ITicketService ticketService;
         
 
-        public BranchMutations() {
-            branchService = new BranchService();
+        public TicketMutations() {
+            ticketService = new TicketService();
         }
 
-        public async Task<Branch> CreateBranch(AddBranch branch)
-        {
+        public async Task<Models.Ticket> CreateTicket(AddTicket ticket) {
             try
             {
-                return await branchService.CreateBranchAsync(branch);
+                return await ticketService.CreateTicketAsync(ticket);
             }
             catch (Exception e)
             {
@@ -29,10 +28,10 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Branches {
             }
         }
 
-        public async Task<Branch> EditBranch(EditBranch branch) {
+        public async Task<Models.Ticket> EditTicket(EditTicket ticket) {
             try
             {
-                return await branchService.EditBranchAsync(branch);
+                return await ticketService.EditTicketAsync(ticket);
             }
             catch (Exception e)
             {
@@ -41,11 +40,11 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Branches {
             }
         }
 
-        public async Task<bool> DeleteBranch(long branchId)
+        public async Task<bool> DeleteTicket(long ticketId)
         {
             try
             {
-                return await branchService.DeleteBranchAsync(branchId);
+                return await ticketService.DeleteTicketAsync(ticketId);
             }
             catch (Exception e)
             {

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Branches;
+using dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Play;
+using dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Ticket;
+using dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.User;
 using dotnet_graphql_hotchocolate_abdot_middleware_api.Services;
 using dotnet_graphql_hotchocolate_abdot_middleware_api.Services.Classes;
 using dotnet_graphql_hotchocolate_abdot_middleware_api.Services.Interfaces;
@@ -22,10 +25,16 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api {
                 //Queries
                 .AddQueryType(q => q.Name("Query"))
                 .AddTypeExtension<BranchQueries>()
+                .AddTypeExtension<PlayQueries>()
+                .AddTypeExtension<TicketQueries>()
+                .AddTypeExtension<UserQueries>()
 
                 //Mutation
                 .AddMutationType(m => m.Name("Mutation"))
                 .AddTypeExtension<BranchMutations>()
+                .AddTypeExtension<PlayMutations>()
+                .AddTypeExtension<TicketMutations>()
+                .AddTypeExtension<UserMutations>()
 
                 ;
                 //Mutation

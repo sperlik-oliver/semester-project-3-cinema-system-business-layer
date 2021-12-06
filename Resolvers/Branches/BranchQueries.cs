@@ -16,12 +16,27 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Branches {
         }
 
         public async Task<List<Models.Branch>> GetBranches() {
-            Console.WriteLine("Query");
-            return await branchService.GetBranchesAsync();
+            try
+            {
+                return await branchService.GetBranchesAsync();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
 
         public async Task<Models.Branch> GetBranch(int id) {
-            return await branchService.GetBranchAsync(id);
+            try
+            {
+                return await branchService.GetBranchAsync(id);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
     }
 }
