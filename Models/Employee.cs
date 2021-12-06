@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Models
 {
@@ -22,7 +21,7 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Models
          public DateTime BirthDate { get; set; }
         public IList<Ticket> TicketsSold { get; set; }
 
-        public Branch Branch;
+        public Branch Branch { get; set; }
 
         public Employee()
         {

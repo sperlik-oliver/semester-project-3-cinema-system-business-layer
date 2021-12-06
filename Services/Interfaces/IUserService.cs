@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using dotnet_graphql_hotchocolate_abdot_middleware_api.Models;
 using dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.User;
 
-namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Services {
+namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Services.Interfaces {
     public interface IUserService {
         Task<List<User>> GetUsersAsync();
         Task<User> GetUserAsync(int id);
