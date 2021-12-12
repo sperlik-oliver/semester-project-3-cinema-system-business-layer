@@ -13,10 +13,10 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Employee {
             employeeService = new EmployeeService();
         }
 
-        public async Task<Models.Employee> CreateEmployee(AddEmployee input) {
+        public async Task<Models.Employee> CreateEmployee(AddEmployee employee) {
 
             try {
-                return await employeeService.CreateEmployeeAsync(input);
+                return await employeeService.CreateEmployeeAsync(employee);
             }
             catch (Exception e) {
                 Console.WriteLine(e);
@@ -24,9 +24,9 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Employee {
             }
         }
 
-        public async Task<Models.Employee> EditEmployee(EditEmployee input) {
+        public async Task<Models.Employee> EditEmployee(EditEmployee employee) {
             try {
-                return await employeeService.EditEmployeeAsync(input);
+                return await employeeService.EditEmployeeAsync(employee);
             }
             catch (Exception e) {
                 Console.WriteLine(e);
@@ -34,9 +34,9 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Employee {
             }
         }
 
-        public async Task<bool> DeleteEmployee(int id) {
+        public async Task<bool> DeleteEmployee(int employeeId) {
             try {
-                return await employeeService.DeleteEmployeeAsync(id);
+                return await employeeService.DeleteEmployeeAsync(employeeId);
             }
             catch (Exception e) {
                 Console.WriteLine(e);

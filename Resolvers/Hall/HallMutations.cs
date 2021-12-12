@@ -13,10 +13,10 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Hall {
             hallService = new HallService();
         }
 
-        public async Task<Models.Hall> CreateHall(AddHall input) {
+        public async Task<Models.Hall> CreateHall(AddHall hall) {
 
             try {
-                return await hallService.CreateHallAsync(input);
+                return await hallService.CreateHallAsync(hall);
             }
             catch (Exception e) {
                 Console.WriteLine(e);
@@ -24,9 +24,9 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Hall {
             }
         }
 
-        public async Task<Models.Hall> EditHall(EditHall input) {
+        public async Task<Models.Hall> EditHall(EditHall hall) {
             try {
-                return await hallService.EditHallAsync(input);
+                return await hallService.EditHallAsync(hall);
             }
             catch (Exception e) {
                 Console.WriteLine(e);
@@ -34,9 +34,9 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Hall {
             }
         }
 
-        public async Task<bool> DeleteHall(int id) {
+        public async Task<bool> DeleteHall(int hallId) {
             try {
-                return await hallService.DeleteHallAsync(id);
+                return await hallService.DeleteHallAsync(hallId);
             }
             catch (Exception e) {
                 Console.WriteLine(e);

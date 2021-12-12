@@ -22,6 +22,7 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Services.Classes {
 
             var result = await responseMessage.Content.ReadAsStringAsync();
             var branches = JsonConvert.DeserializeObject<List<Branch>>(result);
+            
             return branches;
         }
 

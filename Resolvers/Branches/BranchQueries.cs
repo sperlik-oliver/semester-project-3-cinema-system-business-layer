@@ -6,16 +6,20 @@ using dotnet_graphql_hotchocolate_abdot_middleware_api.Services.Interfaces;
 using dotnet_graphql_hotchocolate_abdot_middleware_api.Models;
 using HotChocolate.Types;
 
-namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Branches {
+namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Branches
+{
     [ExtendObjectType(Name = "Query")]
-    public class BranchQueries {
+    public class BranchQueries
+    {
         private IBranchService branchService;
 
-        public BranchQueries() {
+        public BranchQueries()
+        {
             branchService = new BranchService();
         }
 
-        public async Task<List<Models.Branch>> GetBranches() {
+        public async Task<List<Models.Branch>> GetBranches()
+        {
             try
             {
                 return await branchService.GetBranchesAsync();
@@ -27,7 +31,8 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Branches {
             }
         }
 
-        public async Task<Models.Branch> GetBranch(int id) {
+        public async Task<Models.Branch> GetBranch(int id)
+        {
             try
             {
                 return await branchService.GetBranchAsync(id);

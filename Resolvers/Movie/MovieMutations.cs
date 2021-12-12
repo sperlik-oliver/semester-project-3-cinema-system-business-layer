@@ -13,9 +13,9 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Movie {
             movieService = new MovieService();
         }
 
-        public async Task<Models.Movie> CreateMovie(AddMovie input) {
+        public async Task<Models.Movie> CreateMovie(AddMovie movie) {
             try {
-                return await movieService.CreateMovieAsync(input);
+                return await movieService.CreateMovieAsync(movie);
             }
             catch (Exception e) {
                 Console.WriteLine(e);
@@ -23,9 +23,9 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Movie {
             }
         }
 
-        public async Task<Models.Movie> EditMovie(EditMovie input) {
+        public async Task<Models.Movie> EditMovie(EditMovie movie) {
             try {
-                return await movieService.EditMovieAsync(input);
+                return await movieService.EditMovieAsync(movie);
             }
             catch (Exception e) {
                 Console.WriteLine(e);
@@ -33,9 +33,9 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Movie {
             }
         }
 
-        public async Task<bool> DeleteMovie(int id) {
+        public async Task<bool> DeleteMovie(int movieId) {
             try {
-                return await movieService.DeleteMovieAsync(id);
+                return await movieService.DeleteMovieAsync(movieId);
             }
             catch (Exception e) {
                 Console.WriteLine(e);

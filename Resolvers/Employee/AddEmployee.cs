@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
 
-namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Employee {
-    public class AddEmployee {
+namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Employee
+{
+    public class AddEmployee
+    {
         public string Email { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
