@@ -43,8 +43,17 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.User
 
         public async Task<Models.User> Login(Login login)
         {
+            Console.WriteLine(login.Email);
+            Console.WriteLine(login.Password);
             try
             {
+                Models.User userToReturn = await userService.LoginAsync(login);
+                Console.WriteLine(userToReturn.Id);
+                Console.WriteLine(userToReturn.Email);
+                Console.WriteLine(userToReturn.Password);
+                Console.WriteLine(userToReturn.TicketsPurchased);
+                Console.WriteLine(userToReturn.FirstName);
+                Console.WriteLine(userToReturn.LastName);
                 return await userService.LoginAsync(login);
             }
             catch (Exception e)

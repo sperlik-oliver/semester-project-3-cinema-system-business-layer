@@ -57,7 +57,7 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Services.Classes {
 
         public async Task<bool> DeleteMovieAsync(int id) {
             using HttpClient httpClient = new HttpClient();
-            var responseMessage = await httpClient.GetAsync($"{uri}/delete/{id}");
+            var responseMessage = await httpClient.DeleteAsync($"{uri}/delete/{id}");
             if (!responseMessage.IsSuccessStatusCode) {
                 throw new Exception($"Error: {responseMessage.StatusCode}, {responseMessage.ReasonPhrase}");
             }

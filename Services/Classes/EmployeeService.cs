@@ -38,6 +38,7 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Services.Classes {
         }
 
         public async Task<Employee> CreateEmployeeAsync(AddEmployee employee) {
+            Console.WriteLine(employee.Birthday);
             using HttpClient httpClient = new HttpClient();
             var content = new StringContent(
                 CustomJsonConvert.SerializeObject(employee),

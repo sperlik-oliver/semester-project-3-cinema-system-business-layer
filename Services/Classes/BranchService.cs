@@ -26,6 +26,7 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Services.Classes {
         }
 
         public async Task<Branch> GetBranchAsync(int id) {
+            Console.WriteLine(" id :: " + id);
             using var httpClient = new HttpClient();
             var responseMessage = await httpClient.GetAsync($"{uri}/{id}");
             if (!responseMessage.IsSuccessStatusCode) {
@@ -33,6 +34,7 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Services.Classes {
             }
 
             var result = await responseMessage.Content.ReadAsStringAsync();
+            Console.WriteLine(result);
             var branch = JsonConvert.DeserializeObject<Branch>(result);
             return branch;
         }

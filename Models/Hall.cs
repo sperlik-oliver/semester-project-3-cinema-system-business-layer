@@ -6,7 +6,7 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Models
 {
     public class Hall
     {
-        public long Id { get; private set; }
+        public long Id { get; set; }
         
         public int HallSize { get; set; }
 

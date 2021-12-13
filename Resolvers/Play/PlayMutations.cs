@@ -18,6 +18,8 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Play
 
             public async Task<Models.Play> CreatePlay(AddPlay play)
             {
+
+                
                 try
                 {
                     return await playService.CreatePlayAsync(play);
@@ -30,6 +32,11 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Play
             }
 
             public async Task<Models.Play> EditPlay(EditPlay play) {
+                Console.WriteLine(play.Date);
+                Console.WriteLine(play.Price);
+                Console.WriteLine(play.HallId);
+                Console.WriteLine(play.MovieId);
+                Console.WriteLine(play.TimeInMinutes);
                 try
                 {
                     return await playService.EditPlayAsync(play);

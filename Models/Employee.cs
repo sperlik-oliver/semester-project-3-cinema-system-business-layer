@@ -18,7 +18,7 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Models
         
          public string Country { get; set; }
 
-         public DateTime BirthDate { get; set; }
+         public string Birthday { get; set; }
         public IList<Ticket> TicketsSold { get; set; }
 
         public Branch Branch { get; set; }

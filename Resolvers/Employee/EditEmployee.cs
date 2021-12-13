@@ -14,8 +14,7 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Employee {
         public string City { get; set; }
         public string Postcode { get; set; }
         public string Country { get; set; }
-        public DateTime Birthday { get; set; }
+        public string Birthday { get; set; }
         public int BranchId { get; set; }
-        public List<Models.Ticket> SoldTickets { get; set; }
     }
 }
