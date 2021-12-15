@@ -8,7 +8,6 @@ using dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Hall;
 using dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Movie;
 using dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Play;
 using dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Ticket;
-using dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.User;
 using dotnet_graphql_hotchocolate_abdot_middleware_api.Services;
 using dotnet_graphql_hotchocolate_abdot_middleware_api.Services.Classes;
 using dotnet_graphql_hotchocolate_abdot_middleware_api.Services.Interfaces;
@@ -29,7 +28,6 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api {
                 .AddTypeExtension<BranchQueries>()
                 .AddTypeExtension<PlayQueries>()
                 .AddTypeExtension<TicketQueries>()
-                .AddTypeExtension<UserQueries>()
                 .AddTypeExtension<EmployeeQueries>()
                 .AddTypeExtension<HallQueries>()
                 .AddTypeExtension<MovieQueries>()
@@ -39,7 +37,6 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api {
                 .AddTypeExtension<BranchMutations>()
                 .AddTypeExtension<PlayMutations>()
                 .AddTypeExtension<TicketMutations>()
-                .AddTypeExtension<UserMutations>()
                 .AddTypeExtension<EmployeeMutations>()
                 .AddTypeExtension<HallMutations>()
                 .AddTypeExtension<MovieMutations>()
@@ -51,7 +48,6 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api {
             services.AddScoped<IMovieService, MovieService>();
             services.AddScoped<IPlayService, PlayService>();
             services.AddScoped<ITicketService, TicketService>();
-            services.AddScoped<IUserService, UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
