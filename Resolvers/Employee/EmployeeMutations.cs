@@ -43,5 +43,18 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Employee {
                 throw;
             }
         }
+
+        public async Task<Models.Employee> LoginEmployee(LoginEmployee loginEmployee)
+        {
+            try
+            {
+                return await employeeService.LoginEmployeeAsync(loginEmployee);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
     }
 }

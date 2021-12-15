@@ -18,7 +18,12 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Resolvers.Play
 
             public async Task<Models.Play> CreatePlay(AddPlay play)
             {
-
+                Console.WriteLine("hello");
+                Console.WriteLine(play.Date);
+                Console.WriteLine(play.Price);
+                Console.WriteLine(play.HallId);
+                Console.WriteLine(play.MovieId);
+                Console.WriteLine(play.TimeInMinutes);
                 
                 try
                 {

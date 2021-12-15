@@ -10,5 +10,7 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Services.Interfaces {
         Task<Employee> CreateEmployeeAsync(AddEmployee employee);
         Task<bool> DeleteEmployeeAsync(int id);
         Task<Employee> EditEmployeeAsync(EditEmployee employee);
+
+        Task<Employee> LoginEmployeeAsync(LoginEmployee loginEmployee);
     }
 }

@@ -57,6 +57,25 @@ namespace dotnet_graphql_hotchocolate_abdot_middleware_api.Services.Classes {
             var createdEmployee = JsonConvert.DeserializeObject<Employee>(result);
             return createdEmployee;
         }
+        
+        public async Task<Employee> LoginEmployeeAsync(LoginEmployee loginEmployee) {
+            using HttpClient httpClient = new HttpClient();
+            var content = new StringContent(
+                CustomJsonConvert.SerializeObject(loginEmployee),
+                Encoding.UTF8,
+                "application/json"
+            );
+            Console.WriteLine(CustomJsonConvert.SerializeObject(loginEmployee));
+            var responseMessage = await httpClient.PostAsync($"{uri}/login", content);
+
+            if (!responseMessage.IsSuccessStatusCode) {
+                throw new Exception($"Error: {responseMessage.StatusCode}, {responseMessage.ReasonPhrase}");
+            }
+
+            var result = await responseMessage.Content.ReadAsStringAsync();
+            var createdEmployee = JsonConvert.DeserializeObject<Employee>(result);
+            return createdEmployee;
+        }
 
         public async Task<bool> DeleteEmployeeAsync(int id) {
             using HttpClient httpClient = new HttpClient();
